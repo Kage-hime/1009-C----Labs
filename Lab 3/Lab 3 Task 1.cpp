@@ -60,15 +60,15 @@ class Convertible: virtual public Car
 
         void showCar()
         {
-            if(isIgnitionOn)
-                cout << "Ignition is on. Speed is " << this->speed <<"mph"<<endl;
-            else
-                cout << "Ignition is off. Speed is " << this->speed <<"mph"<<endl;
+            // if(isIgnitionOn)
+            //     cout << "Ignition is on. Speed is " << this->speed <<"mph"<<endl;
+            // else
+            //     cout << "Ignition is off. Speed is " << this->speed <<"mph"<<endl;
 
-            if(isTopUp)
-                cout << "Top is up"<<endl;
-            else
-                cout << "Top is down"<<endl;
+            Car::showCar();
+            //cout << "Ignition is " << (isIgnitionOn ? "on" : "off") <<". Speed is " << this->speed <<" mph"<<endl;
+
+            cout <<"Top is " << (isTopUp ? "up" : "down") << endl;
         };
 
 
@@ -99,6 +99,7 @@ int main()
 {
     ConvertibleRaceCar newcar;
     newcar.turnIgnitionOn();
+    newcar.showCar();
     
 
     return 0;
